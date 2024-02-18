@@ -4,6 +4,8 @@ This repository is the implementation of [ICON: Improving Inter-Report Consisten
 
 ## Overview
 
+Codes and Model Checkpoints are coming soon.
+
 ## Citation
 
 If you use the <span style="font-variant:small-caps;">ICon</span>, please cite our paper:
