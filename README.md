@@ -35,7 +35,7 @@ git clone https://github.com/stanfordmlgroup/CheXbert.git
 
 Model checkpoints of two datasets are available at:
 
-- MIMIC-ABN: [Google Drive (Coming Soon)]()
+- MIMIC-ABN: [Google Drive](https://drive.google.com/drive/folders/1xEvXsXaN_RUIJUCsTZX0iXVkLfJzw9AG?usp=sharing)
 - MIMIC-CXR: [Google Drive (Coming Soon)]()
 
 ## Citation
