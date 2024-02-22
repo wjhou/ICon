@@ -13,6 +13,13 @@ Previous research on radiology report generation has made significant progress i
 - `torch==2.1.0`
 - `transformers==4.36.2`
 
+Please install dependencies by using the following command:
+
+```
+conda env create -f environment.yml # Untested
+conda activate icon
+```
+
 ## Data Preparation and Preprocessing
 
 Please download the three datasets: [IU X-ray](https://openi.nlm.nih.gov/faq), [MIMIC-ABN](https://github.com/zzxslp/WCL/) and [MIMIC-CXR](https://physionet.org/content/mimic-cxr-jpg/2.0.0/), and put the annotation files into the `data` folder.
@@ -23,6 +30,13 @@ Please download the three datasets: [IU X-ray](https://openi.nlm.nih.gov/faq), [
 ```
 git clone https://github.com/stanfordmlgroup/CheXbert.git
 ```
+
+## Model Checkpoints
+
+Model checkpoints of two datasets are available at:
+
+- MIMIC-ABN: [Google Drive (Coming Soon)]()
+- MIMIC-CXR: [Google Drive (Coming Soon)]()
 
 ## Citation
 
