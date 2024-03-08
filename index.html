@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Recap (EMNLP'23 Findings)</title>
+  <title>ICon (Preprint 2024)</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -51,8 +51,8 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title"><img src="static/images/favicon.png"
-                style="height: 40px; width: 40px;"> <span style="font-variant:small-caps;">Recap</span>: Towards Precise
-              Radiology Report Generation via Dynamic Disease Progression Reasoning</h1>
+                style="height: 40px; width: 40px;"> <span style="font-variant:small-caps;">ICon</span>: Improving
+              Inter-Report Consistency of Radiology Report Generation via Lesion-aware Mix-up Augmentation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -63,6 +63,8 @@
                 <a href="https://kaishxu.github.io/" target="_blank">Kaishuai Xu</a><sup>1*</sup>,</span>
               </span>
               <span class="author-block">
+                <a href="https://gaiakoen.github.io/yanhu/" target="_blank">Yan Hu</a><sup>2</sup>,</span>
+              <span class="author-block">
                 <a href="https://www4.comp.polyu.edu.hk/~cswjli/" target="_blank">Wenjie Li</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://faculty.sustech.edu.cn/liuj/" target="_blank">Jiang Liu</a><sup>2</sup></span>
@@ -71,27 +73,16 @@
 
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>The Hong Kong Polytechnic University (PolyU), Hong Kong, China<br>
-                <sup>2</sup>Southern University of Science and Technology (SUSTech), Shenzhen, China<br>EMNLP 2023
-                Findings</span>
+                <sup>2</sup>Southern University of Science and Technology (SUSTech), Shenzhen, China<br>Preprint
+                2024</span>
               <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- Arxiv PDF link -->
-                <span class="link-block">
-                  <a href="https://aclanthology.org/2023.findings-emnlp.140/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/wjhou/Recap" target="_blank"
+                  <a href="https://github.com/wjhou/ICon" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -102,7 +93,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2310.13864" target="_blank"
+                  <a href="https://arxiv.org/abs/2402.12844" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -117,25 +108,6 @@
       </div>
     </div>
   </section>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Updates</h2>
-          <div class="content has-text-justified">
-            <strong>[2024/01/13]</strong> Checkpoints (Stage 1 and Stage 2) for the MIMIC-ABN dataset are available at
-            <a href="https://drive.google.com/drive/folders/1kGVGeqvGG__jUh8Uds-SMypUD3BPGP5U?usp=sharing">Google
-              Drive</a>
-            <strong>[2024/01/12]</strong> Checkpoints (Stage 1 and Stage 2) for the MIMIC-CXR dataset are available at
-            <a href="https://drive.google.com/drive/folders/1Tdu1d_OaxiGGoPEpajvHaolzD99mz7u4?usp=sharing">Google
-              Drive</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
 
   <!-- Paper abstract -->
   <section class="section hero is-light">
@@ -145,22 +117,33 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Automating radiology report generation can significantly alleviate radiologists' workloads. Previous
-              research has primarily focused on realizing highly concise observations while neglecting the precise
-              attributes that determine the severity of diseases (e.g., small pleural effusion). Since incorrect
-              attributes will lead to imprecise radiology reports, strengthening the generation process with precise
-              attribute modeling becomes necessary. Additionally, the temporal information contained in the historical
-              records, which is crucial in evaluating a patient's current condition (e.g., heart size is unchanged), has
-              also been largely disregarded. To address these issues, we propose <b><span
-                  style="font-variant:small-caps;">Recap</span></b>, which generates precise and accurate radiology
-              reports via dynamic disease progression reasoning. Specifically, <b><span
-                  style="font-variant:small-caps;">Recap</span></b> first predicts the observations and progressions
-              (i.e.,
-              spatiotemporal information) given two consecutive radiographs. It then combines the historical records,
-              spatiotemporal information, and radiographs for report generation, where a disease progression graph and
-              dynamic progression reasoning mechanism are devised to accurately select the attributes of each
-              observation and progression. Extensive experiments on two publicly available datasets demonstrate the
-              effectiveness of our model.
+              Previous research on radiology report generation has made significant progress in terms of increasing the
+              clinical
+              accuracy of generated reports. In this paper, we emphasize another crucial quality that it should possess,
+              i.e.,
+              \textit{inter-report consistency}, which refers to the capability of generating consistent reports for
+              semantically
+              equivalent radiographs. This quality is even of greater significance than the overall report accuracy in
+              terms of
+              ensuring the system's credibility, as a system prone to providing conflicting results would severely erode
+              users' trust.
+              Regrettably, existing approaches struggle to maintain inter-report consistency, exhibiting biases towards
+              common
+              patterns and susceptibility to lesion variants. To address this issue, we propose <b><span
+                  style="font-variant:small-caps;">ICon</span></b>, which
+              improves the inter-report consistency of radiology report generation.
+              Aiming at
+              enhancing the system's ability to capture the similarities in semantically equivalent lesions, our
+              approach involves
+              first extracting lesions from input images and examining their characteristics. Then, we introduce a
+              lesion-aware mix-up
+              augmentation technique to ensure that the representations of the semantically equivalent lesions align
+              with the same
+              attributes, by linearly interpolating them during the training phase. Extensive experiments on three
+              publicly available
+              chest X-ray datasets verify the effectiveness of our approach, both in terms of improving the consistency
+              and accuracy
+              of the generated reports.
             </p>
             <img src="static/images/overview.png">
           </div>
@@ -180,7 +163,6 @@
         <h3 class="title is-4">Quantitative Results</h3>
         <img src="static/images/table1.jpg">
         <img src="static/images/table2.jpg">
-        <img src="static/images/table3.jpg">
       </div>
       <div class="content has-text-justified">
         <h3 class="title is-4">Qualitative Results</h3>
@@ -193,17 +175,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{hou-etal-2023-recap,
-  title = "{RECAP}: Towards Precise Radiology Report Generation via Dynamic Disease Progression Reasoning",
-  author = "Hou, Wenjun and Cheng, Yi and Xu, Kaishuai and Li, Wenjie and Liu, Jiang",
-  booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
-  month = dec,
-  year = "2023",
-  address = "Singapore",
-  publisher = "Association for Computational Linguistics",
-  url = "https://aclanthology.org/2023.findings-emnlp.140",
-  doi = "10.18653/v1/2023.findings-emnlp.140",
-  pages = "2134--2147",
+      <pre><code>@inproceedings{hou-etal-2024-icon,
+      title = "{ICON}: Improving Inter-Report Consistency of Radiology Report Generation via Lesion-aware Mix-up
+      Augmentation",
+      author = "Hou, Wenjun and Cheng, Yi and Xu, Kaishuai and Hu, Yan and Li, Wenjie and Liu, Jiang",
 }</code></pre>
     </div>
   </section>
