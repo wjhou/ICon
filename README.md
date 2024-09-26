@@ -1,4 +1,4 @@
-# <span style="font-variant:small-caps;">ICON</span>: Improving Inter-Report Consistency of Radiology Report Generation via Lesion-aware Mix-up Augmentation
+# <span style="font-variant:small-caps;">ICON</span>: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation
 
 This repository is the implementation of [ICON: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation](https://arxiv.org/abs/2402.12844). Before running the code, please install the prerequisite libraries, and follow our instructions to replicate the experiments. Codes and Model Checkpoints are coming soon.
 
