@@ -52,7 +52,7 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title"><img src="static/images/favicon.png"
                 style="height: 40px; width: 40px;"> <span style="font-variant:small-caps;">ICon</span>: Improving
-              Inter-Report Consistency of Radiology Report Generation via Lesion-aware Mix-up Augmentation</h1>
+              Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -121,29 +121,26 @@
               clinical
               accuracy of generated reports. In this paper, we emphasize another crucial quality that it should possess,
               i.e.,
-              \textit{inter-report consistency}, which refers to the capability of generating consistent reports for
+              inter-report consistency, which refers to the capability of generating consistent reports for semantically
+              equivalent
+              radiographs. This quality is even of greater significance than the overall report accuracy in terms of
+              ensuring the
+              system's credibility, as a system prone to providing conflicting results would severely erode users'
+              trust. Regrettably,
+              existing approaches struggle to maintain inter-report consistency, exhibiting biases towards common
+              patterns and
+              susceptibility to lesion variants. To address this issue, we propose ICON, which improves the inter-report
+              consistency
+              of radiology report generation. Aiming to enhance the system's ability to capture similarities in
               semantically
-              equivalent radiographs. This quality is even of greater significance than the overall report accuracy in
-              terms of
-              ensuring the system's credibility, as a system prone to providing conflicting results would severely erode
-              users' trust.
-              Regrettably, existing approaches struggle to maintain inter-report consistency, exhibiting biases towards
-              common
-              patterns and susceptibility to lesion variants. To address this issue, we propose <b><span
-                  style="font-variant:small-caps;">ICon</span></b>, which
-              improves the inter-report consistency of radiology report generation.
-              Aiming at
-              enhancing the system's ability to capture the similarities in semantically equivalent lesions, our
-              approach involves
-              first extracting lesions from input images and examining their characteristics. Then, we introduce a
-              lesion-aware mix-up
-              augmentation technique to ensure that the representations of the semantically equivalent lesions align
-              with the same
-              attributes, by linearly interpolating them during the training phase. Extensive experiments on three
-              publicly available
-              chest X-ray datasets verify the effectiveness of our approach, both in terms of improving the consistency
-              and accuracy
-              of the generated reports.
+              equivalent lesions, our approach first involves extracting lesions from input images and examining their
+              characteristics. Then, we introduce a lesion-aware mixup technique to ensure that the representations of
+              the
+              semantically equivalent lesions align with the same attributes, achieved through a linear combination
+              during the
+              training phase. Extensive experiments on three publicly available chest X-ray datasets verify the
+              effectiveness of our
+              approach, both in terms of improving the consistency and accuracy of the generated reports.
             </p>
             <img src="static/images/overview.png">
           </div>
