@@ -24,9 +24,9 @@ log_level="info"
 report_to="none"
 model_name="swinv2"
 vision_model="microsoft/swinv2-small-patch4-window8-256"
-chexbert_label="./CheXbert/src/data/mimic_cxr/id2tag.csv"
-annotation_file="./mimic_cxr/annotation.json"
-image_path="./mimic_abn/images"
+chexbert_label="./data/mimic_cxr/id2tag.csv"
+annotation_file="./data/mimic_cxr/annotation.json"
+image_path="./data/mimic_cxr/images"
 output_dir="./tmp_stage1/mimic_cxr_stage1_${model_name}_image${image_size}_${date}/"
 
 if [ "$1" -ne 1 ];
@@ -34,12 +34,11 @@ then
     echo "********** debug **********"
     echo "********** debug **********"
     echo "********** debug **********"
-    suffix="_debug"
     max_steps=3
     num_train_epochs=1
     eval_steps=1
     save_steps=1
-    output_dir="./tmp/bert_doc_baseline_debug"
+    output_dir="./tmp_stage1/mimic_cxr_stage1_debug"
     overwrite_output_dir=true
     debug_model=true
     report_to="none"
@@ -47,7 +46,7 @@ fi
 
 export TOKENIZERS_PARALLELISM=true
 python3 -u ./src_stage1/run_ende.py \
-    --chexbert_model_name_or_path ../CheXbert/chexbert.pth \
+    --chexbert_model_name_or_path ./CheXbert/chexbert.pth \
     --vision_model $vision_model \
     --annotation_file $annotation_file \
     --image_path $image_path \
@@ -83,6 +82,6 @@ python3 -u ./src_stage1/run_ende.py \
     --length_column_name length \
     --eval_on_gen \
     --greater_is_better true \
-    --metric_for_best_model eval_BLEU_4 \
+    --metric_for_best_model eval_score \
     --debug_model $debug_model \
     --num_beams $num_beams

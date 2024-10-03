@@ -1,6 +1,6 @@
 # <span style="font-variant:small-caps;">ICON</span>: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation
 
-This repository is the implementation of [ICON: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation](https://arxiv.org/abs/2402.12844). Before running the code, please install the prerequisite libraries, and follow our instructions to replicate the experiments. Codes and Model Checkpoints are coming soon.
+This repository is the implementation of [ICON: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation](https://arxiv.org/abs/2402.12844). Before running the code, please install the prerequisite libraries, and follow our instructions to replicate the experiments.
 
 ## Overview
 
@@ -22,21 +22,66 @@ conda activate icon
 
 ## Data Preparation and Preprocessing
 
+### Observation Annotation
 Please download the three datasets: [IU X-ray](https://openi.nlm.nih.gov/faq), [MIMIC-ABN](https://github.com/zzxslp/WCL/) and [MIMIC-CXR](https://physionet.org/content/mimic-cxr-jpg/2.0.0/), and put the annotation files into the `data` folder.
 
-- For observation preprocessing, we use [CheXbert](https://arxiv.org/pdf/2004.09167.pdf) to extract relevant observation information. Please follow the [instruction](https://github.com/stanfordmlgroup/CheXbert#prerequisites) to extract the observation tags.
+- For observation preprocessing, we use [CheXbert](https://arxiv.org/pdf/2004.09167.pdf) to extract relevant observation information. Please follow the [instruction](https://github.com/stanfordmlgroup/CheXbert#prerequisites) to extract the observation tags. _Note that both report-level and sentence-level annotations are required._
 - For CE evaluation, please clone CheXbert into the folder and download the checkpoint [chexbert.pth](https://stanfordmedicine.box.com/s/c3stck6w6dol3h36grdc97xoydzxd7w9) into CheXbert:
 
 ```
 git clone https://github.com/stanfordmlgroup/CheXbert.git
 ```
 
+### Attribute Annotation
+Attribute annotation is built upon [RadGraph](https://physionet.org/content/radgraph/1.0.0/). We adopt the same attributes released by [Recap](https://github.com/wjhou/Recap/tree/main/data/20240101).
+
+### Semantic Equivalence Retrieval
+Semantic equivalances are built based on report similarity. Run the following code to retrieve similar reports:
+```
+./script_retrieval/run_mimic_cxr.sh
+```
+
+## Stage 1: Lesion Extraction
+### Stage 1.1 Training Zoomer
+There are two parameters required to run the code of the Zoomer:
+- debug: whether debugging the code (0 for debugging and 1 for running)
+- date: date of running the code
+```
+./script_stage1/run_mimic_cxr.sh debug date
+```
+
+Checkpoints are saved into `./tmp_stage1/`
+
+Example: `./script_stage1/run_mimic_cxr.sh 1 20240101`
+
+### Stage 1.2 Extracting Lesions
+Specific the checkpoint position of Zoomer, and run:
+```
+./script_xai/run_mimic_cxr.sh
+```
+
+## Stage 2: Report Generation
+<!-- There are two parameters required to run the code of report generation:
+- debug: whether debugging the code (0 for debugging and 1 for running)
+- date: date of running the code
+```
+./script_stage2/run_mimic_cxr.sh debug date
+```
+
+Checkpoints are saved into `./tmp_stage2/`
+
+Example: `./script_stage2/run_mimic_cxr.sh 1 20240101` -->
+
+## Consistency Evaluation
+
 ## Model Checkpoints
 
 Model checkpoints of two datasets are available at:
 
-- MIMIC-ABN: [Google Drive](https://drive.google.com/drive/folders/1xEvXsXaN_RUIJUCsTZX0iXVkLfJzw9AG?usp=sharing)
-- MIMIC-CXR: [Google Drive](https://drive.google.com/drive/folders/1CVDq8qsAy2d1UMji6jZrBSw4-3fNqLqt?usp=sharing)
+| Dataset |Stage 1|Stage 2|
+|---------|-------|-------|
+|MIMIC-ABN|[Google Drive](https://drive.google.com/file/d/1-CnFhtdzb-wGN31pUvFcV269JE_KrIyH/view?usp=drive_link)|[Google Drive](https://drive.google.com/file/d/1ICapdG35Qe9VfA9vPE7EktOUU3Gk9emK/view?usp=drive_link)|
+|MIMIC-CXR|[Google Drive](https://drive.google.com/file/d/1zd1LXjqBQ_na7LFZ5Rq6segiRCxWRZZF/view?usp=drive_link)|Coming soon|
 
 ## Citation
 

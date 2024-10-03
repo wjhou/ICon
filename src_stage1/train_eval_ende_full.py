@@ -92,7 +92,7 @@ def eval_text(
     report_ids = []
     test_progress = tqdm(
         test_dataset,
-        desc="Evaluating Model (Report Generation)",
+        desc="Evaluating Model",
     )
     observation_labels = model.config.observation_category
     pad_observation_labels = pad_strings(observation_labels)
@@ -281,4 +281,4 @@ def eval_text(
             encoding="utf-8",
         ) as f:
             json.dump(output_data, f, ensure_ascii=False, indent=4)
-    return {"eval_BLEU_4": target}
+    return {"eval_score": target}

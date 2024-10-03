@@ -1,0 +1,21 @@
+{
+    "train": [
+        {
+            "id": "xxxx", 
+            "image_path": [
+                "a.jpg",
+                "b.jpg"
+            ], 
+            "view": [
+                "PA",
+                "LATERAL"
+            ],
+            "study_id": "xxxx",
+            "subject_id": "xxxx",
+            "report": "xxxx",
+            "split": "train" 
+        }
+    ], 
+    "val": [], 
+    "test": []
+}
