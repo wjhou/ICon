@@ -43,7 +43,7 @@ Semantic equivalances are built based on report similarity. Run the following co
 
 ## Stage 1: Lesion Extraction
 ### Stage 1.1 Training Zoomer
-There are two parameters required to run the code of the Zoomer:
+Two parameters are required to run the code of the Zoomer:
 - debug: whether debugging the code (0 for debugging and 1 for running)
 - date: date of running the code
 ```
@@ -61,7 +61,7 @@ Specific the checkpoint position of Zoomer, and run:
 ```
 
 ## Stage 2: Report Generation
-There are two parameters required to run the code of report generation:
+Two parameters are required to run the code of report generation:
 - debug: whether debugging the code (0 for debugging and 1 for running)
 - date: date of running the code
 ```
