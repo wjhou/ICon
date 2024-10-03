@@ -61,7 +61,7 @@ Specific the checkpoint position of Zoomer, and run:
 ```
 
 ## Stage 2: Report Generation
-<!-- There are two parameters required to run the code of report generation:
+There are two parameters required to run the code of report generation:
 - debug: whether debugging the code (0 for debugging and 1 for running)
 - date: date of running the code
 ```
@@ -70,7 +70,7 @@ Specific the checkpoint position of Zoomer, and run:
 
 Checkpoints are saved into `./tmp_stage2/`
 
-Example: `./script_stage2/run_mimic_cxr.sh 1 20240101` -->
+Example: `./script_stage2/run_mimic_cxr.sh 1 20240101`
 
 ## Consistency Evaluation
 

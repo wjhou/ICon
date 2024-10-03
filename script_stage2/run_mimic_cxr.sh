@@ -23,22 +23,23 @@ log_level="info"
 report_to="none"
 image_size=256
 vision_model="microsoft/swinv2-tiny-patch4-window8-256"
-attribute_file="./Recap/data/mimic_cxr/triples.json"
-chexbert_label="./CheXbert/src/data/mimic_cxr/id2tag.csv"
-annotation_file="./mimic_cxr/annotation.json"
-temporal_file="./mimic_cxr/temporal_ids.json"
+attribute_file="./data/mimic_cxr/triples.json"
+chexbert_label="./data/mimic_cxr/id2tag.csv"
+annotation_file="./data/mimic_cxr/annotation.json"
+temporal_file="./data/mimic_cxr/temporal_ids.json"
 patch_annotation_file="./data/mimic_cxr/aligned_patch_annotation.json"
 swap_annotation_file="./data/mimic_cxr/swap_patch_annotation.json"
-image_path="./mimic_cxr/images"
+image_path="./data/mimic_cxr/images"
 patch_path="./data/mimic_cxr/"
-stage1_model_name_or_path="./tmp_stage1/mimic_cxr_stage1/"
-stage1_eval_output="results_eval_step_5945.json"
-num_prototype=$2
-date=$3
-output_dir=$4
-num_train_epochs=$5
+num_prototype=30
+num_train_epochs=5
 nproc_per_node=4 # 4 GPUs
 master_port=25642
+model_name="swinv2"
+date=$2
+stage1_model_name_or_path="./tmp_stage1/mimic_cxr_stage1_${model_name}_image${image_size}_${date}/"
+stage1_eval_output="results_eval_step_5945.json"
+output_dir="./tmp_stage2/mimic_cxr_stage2_${model_name}_image${image_size}_${date}/"
 
 if [ "$1" -ne 1 ];
 then
@@ -47,7 +48,7 @@ then
     echo "********** debug **********"
     suffix="_debug"
     num_train_epochs=1
-    output_dir="./tmp_stage2/toy_debug"
+    output_dir="./tmp_stage2/mimic_cxr_stage2_debug"
     overwrite_output_dir=true
     debug_model=true
     report_to="none"
