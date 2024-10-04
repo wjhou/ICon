@@ -55,7 +55,7 @@ Checkpoints are saved into `./tmp_stage1/`
 Example: `./script_stage1/run_mimic_cxr.sh 1 20240101`
 
 ### Stage 1.2 Extracting Lesions
-Specific the checkpoint position of Zoomer, and run:
+Specify the checkpoint position of Zoomer, and run:
 ```
 ./script_xai/run_mimic_cxr.sh
 ```
@@ -73,6 +73,13 @@ Checkpoints are saved into `./tmp_stage2/`
 Example: `./script_stage2/run_mimic_cxr.sh 1 20240101`
 
 ## Consistency Evaluation
+
+Observation and attribute annotation are required for consistency evaluation. Specify the positions of two outputs from two systems, and run the following code:
+- o1: output of system 1
+- o2: output of system 2
+```
+python eval_consistency o1 o2
+```
 
 ## Model Checkpoints
 
