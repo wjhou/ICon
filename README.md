@@ -74,11 +74,10 @@ Example: `./script_stage2/run_mimic_cxr.sh 1 20240101`
 
 ## Consistency Evaluation
 
-Observation and attribute annotation are required for consistency evaluation. Specify the positions of two outputs from two systems, and run the following code:
-- o1: output of system 1
-- o2: output of system 2
+Observation and attribute annotation are required for consistency evaluation. Specify the positions of the outputs a report generation system, and run the following code:
+- output: output of the system 
 ```
-python eval_consistency o1 o2
+python eval_consistency output
 ```
 
 ## Model Checkpoints
