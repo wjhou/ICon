@@ -9,10 +9,12 @@ Previous research on radiology report generation has made significant progress i
 
 ## Requirements
 
+### Basic Requirements
 - `python>=3.9.0`
 - `torch==2.1.0`
 - `transformers==4.36.2`
 
+### Other Requirements
 Please install dependencies by using the following command:
 
 ```
