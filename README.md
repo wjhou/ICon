@@ -47,7 +47,7 @@ Semantic equivalances are built based on report similarity. Run the following co
 ### Stage 1.1 Training Zoomer
 Two parameters are required to run the code of the Zoomer:
 - debug: whether debugging the code (0 for debugging and 1 for running)
-- date: date of running the code
+- date: date of running the code (checkpoint identifier)
 ```
 ./script_stage1/run_mimic_cxr.sh debug date
 ```
@@ -65,7 +65,7 @@ Specify the checkpoint position of Zoomer in the script, and run:
 ## Stage 2: Report Generation
 Two parameters are required to run the code of report generation:
 - debug: whether debugging the code (0 for debugging and 1 for running)
-- date: date of running the code
+- date: date of running the code (checkpoint identifier)
 ```
 ./script_stage2/run_mimic_cxr.sh debug date
 ```
