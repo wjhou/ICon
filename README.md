@@ -91,7 +91,7 @@ Model checkpoints of two datasets are available at:
 | Dataset |Stage 1|Stage 2|
 |---------|-------|-------|
 |MIMIC-ABN|[Google Drive](https://drive.google.com/file/d/1-CnFhtdzb-wGN31pUvFcV269JE_KrIyH/view?usp=drive_link)|[Google Drive](https://drive.google.com/file/d/1ICapdG35Qe9VfA9vPE7EktOUU3Gk9emK/view?usp=drive_link)|
-|MIMIC-CXR|[Google Drive](https://drive.google.com/file/d/1zd1LXjqBQ_na7LFZ5Rq6segiRCxWRZZF/view?usp=drive_link)|Coming soon|
+|MIMIC-CXR|[Google Drive](https://drive.google.com/file/d/1zd1LXjqBQ_na7LFZ5Rq6segiRCxWRZZF/view?usp=drive_link)|[Google Drive](https://drive.google.com/file/d/1vXs_tLC4iZ5CNRKT3-mWsm-B9L5S1aWz/view?usp=drive_link)|
 
 ## Citation
 
