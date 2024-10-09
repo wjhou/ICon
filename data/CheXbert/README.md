@@ -1,0 +1,1 @@
+Download chexbert.pth (https://stanfordmedicine.app.box.com/s/c3stck6w6dol3h36grdc97xoydzxd7w9) and put it here.
