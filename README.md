@@ -1,6 +1,6 @@
 # <span style="font-variant:small-caps;">ICON</span>: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation
 
-This repository is the implementation of [ICON: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation](https://arxiv.org/abs/2402.12844). Before running the code, please install the prerequisite libraries, and follow our instructions to replicate the experiments.
+This repository is the implementation of [ICON: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation](https://aclanthology.org/2024.findings-emnlp.528/). Before running the code, please install the prerequisite libraries, and follow our instructions to replicate the experiments.
 
 ## Overview
 
@@ -100,6 +100,22 @@ If you use the <span style="font-variant:small-caps;">ICon</span>, please cite o
 ```bibtex
 @inproceedings{hou-etal-2024-icon,
     title = "{ICON}: Improving Inter-Report Consistency in Radiology Report Generation via Lesion-aware Mixup Augmentation",
-    author = "Hou, Wenjun and Cheng, Yi and Xu, Kaishuai and Hu, Yan and Li, Wenjie and Liu, Jiang",
+    author = "Hou, Wenjun  and
+      Cheng, Yi  and
+      Xu, Kaishuai  and
+      Hu, Yan  and
+      Li, Wenjie  and
+      Liu, Jiang",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-emnlp.528",
+    pages = "9043--9056",
 }
+
 ```
