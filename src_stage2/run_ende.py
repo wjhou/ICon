@@ -230,9 +230,6 @@ def main():
             continue
         special_tokens_dict["additional_special_tokens"].extend([f"<Positive {obs}>"])
 
-    # for MIMI-CXR baselines: base/wo_elector
-    # for obs in observation_category:
-    #     special_tokens_dict["additional_special_tokens"].extend([f"<Positive {obs}>", f"<Negative {obs}>"])
     tokenizer.add_special_tokens(special_tokens_dict)
     model_config = AutoConfig.from_pretrained(language_checkpoint)
     tokenizer.id2attribute = id2attribute
